@@ -1,0 +1,46 @@
+<div
+  class="section banner"
+>
+  <div class="wrapper">
+    <div class="container">
+      <div class="flex flex-row">
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "",
+  "class": "",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "beautyText",
+      "name": "Beauty Text",
+      "limit": 11,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#000"
+        },
+        {
+          "type": "checkbox",
+          "id": "override_color",
+          "label": "Override theme Text-color",
+          "default": false
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

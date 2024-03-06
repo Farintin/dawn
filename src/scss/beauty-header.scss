@@ -1,0 +1,145 @@
+header {
+    .col {
+        &.col-left {
+            @apply justify-start;
+        }
+        &.col-center {
+            @apply justify-center;
+        }
+        &.col-right {
+            @apply justify-end;
+        }
+
+        &.items-top {
+            @apply items-start;    
+        }
+        &.items-middle {
+            @apply items-center;    
+        }
+        &.items-bottom {
+            @apply items-end;    
+        }
+
+        > * {
+            margin: 0 .5rem;
+        }
+
+        /* > *:first-child {
+            @apply ml-0;
+        }
+        > *:last-child {
+            @apply mr-0;
+        } */
+    }
+}
+
+
+
+header {
+    nav {
+        ul {
+            @apply flex flex-row items-center justify-center flex-wrap 
+                    list-none leading-none;
+            /* line-height: 75%; */
+
+            li {
+                @apply flex flex-row items-center;
+                margin: .5rem .75rem;
+
+                details {
+                    @apply relative;
+                    /* Hide arrow glyph */
+                    summary.label {
+                        @apply list-none cursor-pointer flex flex-row items-center justify-between;
+                        /* list-style: none; */
+                        .marker {
+                            @apply flex flex-row items-center
+                                    ml-[2px] mt-[-2px];
+                            .icon {
+                                @apply w-[15px] stroke-[2.4px];
+                            }
+                        }
+                    }
+                    /* Hide arrow glyph in Safari */
+                    summary.label::-webkit-details-marker {
+                        @apply hidden;
+                    }
+                    /* Add some styles to make the dropdown menu stand out from */
+                    /* the rest of the page. A high `z-index` ensures it stays */
+                    /* on top of all the other content. */
+                    ul {
+                        @apply block list-none 
+                          bg-white 
+                            min-w-40 w-max max-w-48
+                            absolute top-8 z-10;
+                        padding: .5rem 0;
+                        border: 0px solid lightgray;
+                        box-shadow: 0px 0px 12px 0px rgba(0,0,0,.12);
+                        li {
+                            @apply block;
+                            
+                            details {
+                                summary.label {
+                                    @apply flex flex-row items-center;
+                                }
+                            }
+                            .link, details {
+                                @apply block w-full;
+
+                                .label {
+                                    @apply block;
+                                }
+                            }
+                        }
+                    }
+                }
+                /* .link span.label, details summary.label {
+                } */
+            }
+        }
+    }
+}
+  
+
+
+header nav details summary.label .marker .icon.chevron-up {
+    @apply hidden;
+}
+header nav details[open] > summary.label .marker .icon.chevron-up {
+    @apply block;
+}
+header nav details[open] > summary.label .marker .icon.chevron-down {
+    @apply hidden;
+}
+
+
+
+header nav details ul li {
+    .link span.label {
+        padding: .7rem 1rem;
+    }
+    details summary.label  {
+        padding: .7rem 1rem;
+    }
+
+    .link:hover, 
+    details summary.label:hover, 
+    details[open] > summary.label {
+        background-color: lightgray;
+    }
+  
+    details ul {
+        @apply top-0;
+        left: calc(100% - 0rem);
+    }
+}
+
+
+
+header {
+    button.icon-btn {
+        svg.icon {
+            @apply w-6;
+        }
+    }
+}

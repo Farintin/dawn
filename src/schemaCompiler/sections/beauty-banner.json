@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "class": "",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "beautyText",
+      "add": {
+        "limit": 11
+      }
+    }
+  ]
+}

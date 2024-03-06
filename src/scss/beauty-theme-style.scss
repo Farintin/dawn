@@ -1,0 +1,70 @@
+.heading {
+    font-weight: var(--font-heading-weight);
+    line-height: 1.35;
+    font-family: var(--font-heading-family);
+    font-size: var(--font-heading-size);
+    font-style: var(--font-heading-style);
+    color: var(--font-heading-color);
+}
+.logo {
+    --font-heading-color: var(--logo-font-heading-color);
+    --font-heading-style: var(--logo-font-heading-style);
+}
+
+.section {
+    @apply py-4;
+    font-style: var(--font-body-style);
+    > .wrapper {
+        @apply px-4
+    }
+}
+header.section {
+    > .wrapper {
+        @apply px-2
+    }
+}
+
+.container {
+    @apply mx-auto
+}
+
+
+
+.link, details summary.label {
+    &:hover, &.active {
+        @apply text-[var(--link-focus-color)];
+    }
+}
+
+
+
+svg.icon {
+    @apply w-6 stroke-black stroke-2;
+    /* width: 22px; */
+}
+
+
+
+button.icon-btn {
+    @apply p-2 relative;
+
+    .cart-count-bubble {
+        @apply hidden;
+    }
+}
+button.icon-btn.cart {
+    .cart-count-bubble {
+        --width: 18px;
+        width: var(--width);
+        height: var(--width);
+        top: calc(20% - var(--width) / 2);
+        right: calc(20% - var(--width) / 2);
+        @apply flex justify-center items-center
+                absolute
+                bg-red-600
+                rounded-full;
+    }
+    .cart-count-bubble .count {
+        @apply text-[10px] font-black text-white;
+    }
+}
