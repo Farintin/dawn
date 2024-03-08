@@ -1,12 +1,20 @@
 <div
-  class="section banner"
+  class="beauty-section banner"
 >
   <div class="wrapper">
-    <div class="container">
-      <div class="flex flex-row">
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
+    <div
+      class="
+        grid grid-cols-[60%_auto] gap-8
+        h-screen
+        *:rounded-t-[4rem] *:h-full
+      "
+    >
+      <div
+        class="bg-[#f00]"
+      ></div>
+      <div
+        class="bg-[#f00]"
+      ></div>
     </div>
   </div>
 </div>
@@ -14,6 +22,14 @@
 {% schema %}
 {
   "name": "BeautyBanner",
+  "settings": [
+    {
+      "type": "color",
+      "id": "col1_bg_color",
+      "label": "Column1 background color",
+      "default": "#000"
+    }
+  ],
   "blocks": [
     {
       "type": "beautyText",
