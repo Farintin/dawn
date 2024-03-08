@@ -1,13 +1,16 @@
 {
-  "name": "",
-  "class": "",
-  "settings": [],
+  "name": "BeautyBanner",
   "blocks": [
     {
       "type": "beautyText",
       "add": {
         "limit": 11
       }
+    }
+  ],
+  "presets": [
+    {
+      "name": "Beauty Banner"
     }
   ]
 }
