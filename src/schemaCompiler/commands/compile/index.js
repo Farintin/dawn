@@ -7,7 +7,6 @@ const {
     readFile,
     getSectionFilenames, 
     getSectionSchemaObj, getSectionSchemaObjs, 
-    writeSectionFile 
     } = require('./fileHandler')
 
 
@@ -101,5 +100,5 @@ const compileSchemaObj = ({ obj, objType = 'Object', nLoop = 0 }) => {
 module.exports = { 
     readFile,
     objCompHandler, arrayCompHandler, compileSchemaObj, 
-    getSectionSchemaObj, getSectionSchemaObjs, getSectionFilenames, writeSectionFile
+    getSectionSchemaObj, getSectionSchemaObjs, getSectionFilenames
 }

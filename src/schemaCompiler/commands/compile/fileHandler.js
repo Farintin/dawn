@@ -22,13 +22,6 @@ const getSectionSchemaObj = fn => {
 
 const getSectionSchemaObjs = fns => fns.map(fn => getSectionSchemaObj(fn)) 
 
-const writeSectionFile = (fn, data) => {
-    fs.writeFileSync(`./sections/${fn}.liquid`, data, (err) => {
-        if (err) throw err
-        console.log(`${fn} saved!`)
-    })
-}
-
 const getSectionFilenames = () => fs.readdirSync('./src/schemaCompiler/sections/')
 
 
@@ -37,6 +30,5 @@ module.exports = {
   readFile,
   getSectionSchemaObj, 
   getSectionSchemaObjs, 
-  writeSectionFile, 
   getSectionFilenames
 }
