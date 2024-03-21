@@ -1,0 +1,23 @@
+{% if column == 'first' %}
+  {%- assign bg_img_url = section.settings.col1_image.src | image_url: width: 1500 -%}
+  {%- assign content_margin_class = '!mr-0' -%}
+{% else %}
+  {%- assign bg_img_url = section.settings.col2_image.src | image_url: width: 1500 -%}
+{% endif %}
+
+<div
+  class="col"
+  style="        background-image: url({{ bg_img_url }});"
+>
+  <div
+    class="
+      content !{%- if column == 'first' -%}
+        mr-0
+      {%- elsif column == 'second' -%}
+        ml-0
+      {%- endif -%}
+    "
+  >
+    {%- render 'beauty-banner-blocks', column: column -%}
+  </div>
+</div>

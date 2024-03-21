@@ -1,0 +1,10 @@
+{% for block in section.blocks %}
+  {% if block.settings.column_placement == column %}
+    {% case block.type %}
+      {% when 'beautyHeading' %}
+        {%- render 'beauty-heading', block: block -%}
+      {% when 'beautyText' %}
+        {%- render 'beauty-text', block: block -%}
+    {% endcase %}
+  {% endif %}
+{% endfor %}

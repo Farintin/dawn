@@ -9,7 +9,6 @@
       flex-direction: column;
       padding: 4rem;
       margin: 0 12rem;
-      background-color: black;
     }
   </style>
 
@@ -18,51 +17,48 @@
       class="
         grid grid-cols-[60%_auto] gap-8
         h-screen
-        *:rounded-t-[4.5rem] *:h-full *:p-4 *:bg-[#f00] *:bg-center *:bg-cover
+        *:rounded-t-[4.5rem] *:h-full *:p-4 *:bg-center *:bg-cover
+        *:bg-[{{ section.settings.bg_color }}]
       "
     >
-      <div
-        class="col col1"
-      >
-        <div
-          class="
-            content
-            !mr-0
-          "
-        ></div>
-      </div>
-
-      <div
-        class="
-          col col2
-          bg-[url(https://m.media-amazon.com/images/I/91HHhp2-8YL._SL1500_.jpg)]
-        "
-      ></div>
+      {%- render 'beauty-banner-column', column: 'first' -%}
+      {%- render 'beauty-banner-column', column: 'second' -%}
     </div>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "BeautyBanner",
+  "name": "Beauty banner",
   "settings": [
     {
       "type": "color",
-      "id": "col1_bg_color",
-      "label": "Column1 background color",
-      "default": "#000"
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "col1_image",
+      "label": "Colum1 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "col2_image",
+      "label": "Colum2 Image"
     }
   ],
   "blocks": [
     {
-      "type": "beautyText",
-      "name": "Beauty Text",
-      "limit": 11,
+      "type": "beautyHeading",
+      "name": "Beauty Heading",
+      "limit": 2,
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "text",
-          "label": "Text"
+          "label": "Text",
+          "default": "<p>heading</p>"
         },
         {
           "type": "color",
@@ -71,10 +67,55 @@
           "default": "#000"
         },
         {
-          "type": "checkbox",
-          "id": "override_color",
-          "label": "Override theme Text-color",
-          "default": false
+          "type": "radio",
+          "id": "column_placement",
+          "label": "column_placement",
+          "options": [
+            {
+              "value": "first",
+              "label": "first"
+            },
+            {
+              "value": "second",
+              "label": "second"
+            }
+          ],
+          "default": "first"
+        }
+      ]
+    },
+    {
+      "type": "beautyText",
+      "name": "Beauty Text",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "text"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#000"
+        },
+        {
+          "type": "radio",
+          "id": "column_placement",
+          "label": "column_placement",
+          "options": [
+            {
+              "value": "first",
+              "label": "first"
+            },
+            {
+              "value": "second",
+              "label": "second"
+            }
+          ],
+          "default": "first"
         }
       ]
     }
